@@ -1,0 +1,381 @@
+/* Fonts */
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url('../fonts/opensanslight.woff2') format('woff2'), url('../fonts/opensanslight.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Gilroy ExtraBold'), local('Gilroy-ExtraBold'), url('../fonts/gilroyextrabold.woff2') format('woff2'), url('../fonts/gilroyextrabold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Gilroy Light'), local('Gilroy-Light'), url('../fonts/gilroylight.woff2') format('woff2'), url('../fonts/gilroylight.woff') format('woff');
+}
+
+/* Variables */
+
+:root {
+  --basic-black: #000000;
+  --basic-black-transparent: rgba(0, 0, 0, 0.3);
+  --basic-dark: #363636;
+  --basic-dark-gray: #464646;
+  --basic-gray: #7e7e7e;
+  --basic-light-gray: #e5e5e5;
+  --basic-white: #FFFFFF;
+  --basic-dark-yellow: #f0c52e;
+  --basic-yellow: #f7e296;
+  --basic-green: #91c92f;
+  --basic-pink: #f6dada;
+}
+
+/* Global */
+
+.page-body {
+  min-width: 1160px;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 300;
+  color: var(--basic-black);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+/* Navigation */
+
+.main-header {
+  background-color: var(--basic-yellow);
+}
+
+.site-navigation,
+.sub-site-navigation,
+.user-navigation {
+  list-style: none;
+}
+
+.site-navigation a,
+.sub-site-navigation a,
+.user-navigation a {
+  color: var(--basic-black);
+}
+
+.site-navigation a {
+  font-family: "Gilroy", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.sub-site-navigation a {
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 300;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.site-navigation a:hover,
+.user-navigation a:hover {
+  opacity: 0.6;
+}
+
+.site-navigation a:focus,
+.user-navigation a:focus {
+  opacity: 0.3;
+}
+
+/* Slider */
+
+.slider-list {
+  list-style: none;
+}
+
+.slider-item-image img {
+  background-color: var(--basic-light-gray);
+}
+
+.slider-item-title {
+  font-family: "Gilroy", Arial, sans-serif;
+  font-size: 47px;
+  line-height: 58px;
+  font-weight: 800;
+  color: var(--basic-black);
+}
+
+/* Пробую сделать эффект при наведении на кнопку.
+  Размеры псевдоэлементов временные
+*/
+
+.button {
+  font-family: "Gilroy", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 800;
+  color: var(--basic-black);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  z-index: 100;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  height: 6px;
+  width: 100%;
+  z-index: -1;
+  background-color: var(--basic-dark-yellow);
+}
+
+.button:hover::before,
+.button:focus::before {
+  top: 0;
+  height: 100%;
+}
+
+.button:focus {
+  color: var(--basic-black-transparent);
+}
+
+.slider-item-specs tr {
+  font-family: "Gilroy", Arial, sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: var(--basic-black);
+}
+
+.slider-item-specs tr:first-child {
+  font-size: 13px;
+  line-height: 15px;
+}
+
+.slider-item-specs tr:last-child {
+  font-size: 36px;
+  line-height: 42px;
+}
+
+/* Catalog sections */
+
+.catalog-sections-list {
+  list-style: none;
+}
+
+.catalog-sections-item a {
+  font-family: "Gilroy", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--basic-black);
+}
+
+.catalog-sections-item a:focus {
+  opacity: 0.3;
+}
+
+/* Features */
+
+.features {
+  background-color: var(--basic-light-gray);
+}
+
+.features-buttons-list,
+.features-list {
+  list-style: none;
+}
+
+.feature-button:focus {
+  color: var(--basic-yellow);
+}
+
+.feature-button:focus::before {
+  background-color: var(--basic-black);
+}
+
+.feature-title {
+  font-family: "Gilroy", Arial, sans-serif;
+  font-size: 47px;
+  line-height: 58px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: var(--basic-black);
+}
+
+.feature-description {
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 28px;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: var(--basic-black);
+}
+
+/* Companies logos */
+
+.companies-logos-list {
+  list-style: none;
+}
+
+.companies-logos-list img {
+  background-color: var(--basic-light-gray);
+}
+
+/* About us and Contacts */
+
+.about-us h2,
+.contacts h2 {
+  font-family: "Gilroy", Arial, sans-serif;
+  font-size: 47px;
+  line-height: 58px;
+  letter-spacing: 0.2em;
+  font-weight: 800;
+  color: var(--basic-black);
+}
+
+.about-us p,
+.contacts p {
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 28px;
+  font-weight: 300;
+  color: var(--basic-black);
+}
+
+.about-us ul {
+  list-style-type: circle;
+  font-family: "Gilroy", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 800;
+  color: var(--basic-black);
+}
+
+.contacts img {
+  background-color: var(--basic-light-gray);
+}
+
+/* Footer */
+
+.main-footer {
+  background-color: var(--basic-dark);
+}
+
+/* Footer navigation */
+
+.footer-user-navigation {
+  list-style: none;
+}
+
+.footer-user-navigation a {
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 300;
+  color: var(--basic-white);
+  opacity: 0.7;
+}
+
+.footer-user-navigation a:hover {
+  color: var(--basic-white);
+  opacity: 1;
+}
+
+.footer-user-navigation a:focus {
+  opacity: 0.3;
+}
+
+/* Footer contacts */
+
+.contacts-address {
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 300;
+  font-style: normal;
+  color: var(--basic-white);
+}
+
+.contacts-phone,
+.contacts-phone a {
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 300;
+  color: var(--basic-white);
+  text-decoration: none;
+}
+
+/* Footer features */
+
+.footer-features-list {
+  list-style: none;
+}
+
+.footer-features-list a {
+  font-family: "Gilroy", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--basic-white);
+}
+
+.footer-features-list a:hover {
+  opacity: 0.6;
+}
+
+.footer-features-list a:focus {
+  opacity: 0.3;
+}
+
+.footer-social ul {
+  list-style: none;
+}
+
+/* Footer social */
+
+.social-button {
+  color: var(--basic-white);
+  opacity: 0.3;
+}
+
+.social-button:hover {
+  opacity: 0.6;
+}
+
+.social-button:focus {
+  opacity: 0.1;
+}
