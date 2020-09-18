@@ -8,10 +8,17 @@
 }
 
 @font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'), url('../fonts/opensans.woff2') format('woff2'), url('../fonts/opensans.woff') format('woff');
+}
+
+@font-face {
   font-family: 'Gilroy';
   font-style: normal;
   font-weight: 800;
-  src: local('Gilroy ExtraBold'), local('Gilroy-ExtraBold'), url('../fonts/gilroyextrabold.woff2') format('woff2'), url('../fonts/gilroyextrabold.woff') format('woff');
+  src: local('Gilroy ExtraBold'), local('Gilroy-ExtraBold'),url('../fonts/gilroyextrabold.woff2') format('woff2'), url('../fonts/gilroyextrabold.woff') format('woff');
 }
 
 @font-face {
@@ -25,25 +32,35 @@
 
 :root {
   --basic-black: #000000;
-  --basic-black-transparent: rgba(0, 0, 0, 0.3);
+  --basic-black-transparent-30: rgba(0, 0, 0, 0.3);
   --basic-dark: #363636;
+
   --basic-dark-gray: #464646;
   --basic-gray: #7e7e7e;
   --basic-light-gray: #e5e5e5;
+
+  --basic-dark-gray-for-pagination: #D9D9D9;
+  --basic-gray-for-pagination: #EBEBEB;
+
   --basic-white: #FFFFFF;
+
   --basic-dark-yellow: #f0c52e;
   --basic-yellow: #f7e296;
   --basic-green: #91c92f;
+
   --basic-pink: #f6dada;
+
+  --gilroy-font-family: "Gilroy", Arial, sans-serif;
+  --opensans-font-family: "Open Sans", Arial, sans-serif;
 }
 
 /* Global */
 
-.page-body {
-  min-width: 1160px;
+body {
+  min-width: 1200px;
   margin: 0;
   padding: 0;
-  font-family: "Open Sans", Arial, sans-serif;
+  font-family: var(--opensans-font-family);
   font-size: 15px;
   line-height: 20px;
   font-weight: 300;
@@ -57,6 +74,12 @@ img {
 
 a {
   text-decoration: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 .visually-hidden {
@@ -86,7 +109,7 @@ a {
 }
 
 .site-navigation a {
-  font-family: "Gilroy", Arial, sans-serif;
+  font-family: var(--gilroy-font-family);
   font-size: 18px;
   line-height: 22px;
   font-weight: 800;
@@ -95,7 +118,7 @@ a {
 }
 
 .sub-site-navigation a {
-  font-family: "Open Sans", Arial, sans-serif;
+  font-family: var(--opensans-font-family);
   font-size: 15px;
   line-height: 20px;
   font-weight: 300;
@@ -124,19 +147,17 @@ a {
 }
 
 .slider-item-title {
-  font-family: "Gilroy", Arial, sans-serif;
+  font-family: var(--gilroy-font-family);
   font-size: 47px;
   line-height: 58px;
   font-weight: 800;
   color: var(--basic-black);
 }
 
-/* Пробую сделать эффект при наведении на кнопку.
-  Размеры псевдоэлементов временные
-*/
+/* Buttons */
 
 .button {
-  font-family: "Gilroy", Arial, sans-serif;
+  font-family: var(--gilroy-font-family);
   font-size: 18px;
   line-height: 22px;
   font-weight: 800;
@@ -152,25 +173,25 @@ a {
   content: "";
   position: absolute;
   left: 0;
-  top: 8px;
-  height: 6px;
+  top: 50%;
+  transform: translateY(-50%);
   width: 100%;
+  height: 30%;
   z-index: -1;
   background-color: var(--basic-dark-yellow);
 }
 
 .button:hover::before,
 .button:focus::before {
-  top: 0;
   height: 100%;
 }
 
 .button:focus {
-  color: var(--basic-black-transparent);
+  color: var(--basic-black-transparent-30);
 }
 
 .slider-item-specs tr {
-  font-family: "Gilroy", Arial, sans-serif;
+  font-family: var(--gilroy-font-family);
   font-weight: 300;
   letter-spacing: 0.1em;
   color: var(--basic-black);
@@ -193,7 +214,7 @@ a {
 }
 
 .catalog-sections-item a {
-  font-family: "Gilroy", Arial, sans-serif;
+  font-family: var(--gilroy-font-family);
   font-size: 18px;
   line-height: 22px;
   font-weight: 800;
@@ -225,7 +246,7 @@ a {
 }
 
 .feature-title {
-  font-family: "Gilroy", Arial, sans-serif;
+  font-family: var(--gilroy-font-family);
   font-size: 47px;
   line-height: 58px;
   font-weight: 800;
@@ -234,7 +255,7 @@ a {
 }
 
 .feature-description {
-  font-family: "Open Sans", Arial, sans-serif;
+  font-family: var(--opensans-font-family);
   font-size: 15px;
   line-height: 28px;
   font-weight: 300;
@@ -256,7 +277,7 @@ a {
 
 .about-us h2,
 .contacts h2 {
-  font-family: "Gilroy", Arial, sans-serif;
+  font-family: var(--gilroy-font-family);
   font-size: 47px;
   line-height: 58px;
   letter-spacing: 0.2em;
@@ -266,7 +287,7 @@ a {
 
 .about-us p,
 .contacts p {
-  font-family: "Open Sans", Arial, sans-serif;
+  font-family: var(--opensans-font-family);
   font-size: 15px;
   line-height: 28px;
   font-weight: 300;
@@ -275,7 +296,7 @@ a {
 
 .about-us ul {
   list-style-type: circle;
-  font-family: "Gilroy", Arial, sans-serif;
+  font-family: var(--gilroy-font-family);
   font-size: 16px;
   line-height: 28px;
   font-weight: 800;
@@ -299,7 +320,7 @@ a {
 }
 
 .footer-user-navigation a {
-  font-family: "Open Sans", Arial, sans-serif;
+  font-family: var(--opensans-font-family);
   font-size: 15px;
   line-height: 20px;
   font-weight: 300;
@@ -319,7 +340,7 @@ a {
 /* Footer contacts */
 
 .contacts-address {
-  font-family: "Open Sans", Arial, sans-serif;
+  font-family: var(--opensans-font-family);
   font-size: 15px;
   line-height: 20px;
   font-weight: 300;
@@ -329,7 +350,7 @@ a {
 
 .contacts-phone,
 .contacts-phone a {
-  font-family: "Open Sans", Arial, sans-serif;
+  font-family: var(--opensans-font-family);
   font-size: 15px;
   line-height: 20px;
   font-weight: 300;
@@ -344,7 +365,7 @@ a {
 }
 
 .footer-features-list a {
-  font-family: "Gilroy", Arial, sans-serif;
+  font-family: var(--gilroy-font-family);
   font-size: 18px;
   line-height: 22px;
   font-weight: 800;
@@ -378,4 +399,211 @@ a {
 
 .social-button:focus {
   opacity: 0.1;
+}
+
+/* Inner page */
+
+.logout-link {
+  opacity: 0.3;
+}
+
+.page-title {
+  font-family: var(--gilroy-font-family);
+  font-size: 47px;
+  line-height: 58px;
+  font-weight: 800;
+  color: var(--basic-black);
+}
+
+/* Breadcrumbs */
+
+.breadcrumbs {
+  list-style: none;
+}
+
+.breadcrumbs a {
+  font-family: var(--opensans-font-family);
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 300;
+  color: var(--basic-black);
+  opacity: 0.3;
+}
+
+.breadcrumbs a:hover {
+  opacity: 0.6;
+}
+
+.breadcrumbs a:focus {
+  opacity: 0.1;
+}
+
+/* Sort */
+
+.sort-container {
+  background-color: var(--basic-light-gray);
+}
+
+.sort-title {
+  font-family: var(--gilroy-font-family);
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--basic-black);
+}
+
+.sort-list {
+  list-style: none;
+}
+
+.sort-list a {
+  font-family: var(--opensans-font-family);
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: normal;
+  color: var(--basic-black);
+  opacity: 0.3;
+}
+
+.sort-list a:hover {
+  opacity: 0.6;
+}
+
+.sort-list a:focus {
+  opacity: 1;
+}
+
+.sort-list .sort-button {
+  opacity: 0.2;
+}
+
+.sort-list .sort-button:hover {
+  opacity: 0.4;
+}
+
+.sort-list .sort-current,
+.sort-list .sort-button:focus {
+  opacity: 1;
+}
+
+/* Catalog */
+
+.catalog-list {
+  list-style: none;
+}
+
+.catalog-item-image {
+  background-color: var(--basic-light-gray);
+}
+
+.catalog-item-name {
+  font-family: var(--gilroy-font-family);
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--basic-black);
+}
+
+.catalog-item-price {
+  font-family: var(--gilroy-font-family);
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  color: var(--basic-black);
+}
+
+.add-to-compare-link {
+  font-family: var(--basic-black);
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: var(--basic-black);
+  opacity: 0.5;
+  z-index: 100;
+}
+
+.add-to-compare-link:hover {
+  opacity: 1;
+}
+
+.add-to-compare-link:focus {
+  opacity: 0.2;
+}
+
+/* Не совсем уверен, что это необходимо в данном задании,
+но на будущее пробую сделать временный эффект появления кнопок
+при наведении на товар каталога. */
+
+.catalog-item {
+  position: relative;;
+}
+
+.catalog-item-buttons {
+  position: absolute;
+  top: 180px;
+  left: 90px;
+  display: none;
+  text-align: center;
+}
+
+.catalog-item:hover img {
+  opacity: 0.7;
+}
+
+.catalog-item:hover .catalog-item-buttons {
+  display: block;
+}
+
+/* Pagination */
+
+.pagination-list {
+  list-style: none;
+  background-color: var(--basic-gray-for-pagination);
+}
+
+.pagination-item a {
+  font-family: var(--gilroy-font-family);
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--basic-black);
+  text-transform: uppercase;
+  opacity: 0.3;
+}
+
+.pagination-item a:hover {
+  opacity: 0.6;
+}
+
+.pagination-item a:focus,
+.pagination-item-current a {
+  opacity: 1;
+}
+
+.pagination-back a,
+.pagination-forward a {
+  font-family: var(--gilroy-font-family);
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--basic-black);
+}
+
+.pagination-back a:hover,
+.pagination-forward a:hover {
+  background-color: var(--basic-dark-gray-for-pagination);
+}
+
+.pagination-back a:focus,
+.pagination-forward a:focus {
+  background-color: var(--basic-dark-gray-for-pagination);
+  color: var(--basic-black-transparent-30);
 }
