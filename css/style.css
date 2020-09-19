@@ -271,6 +271,13 @@ a {
 
 .companies-logos-list img {
   background-color: var(--basic-light-gray);
+  filter: grayscale(100%);
+  opacity: 0.2;
+}
+
+.companies-logos-list img:hover {
+  filter: none;
+  opacity: 1;
 }
 
 /* About us and Contacts */
