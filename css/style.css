@@ -142,9 +142,9 @@ a {
   list-style: none;
 }
 
-.slider-item-image img {
+/* .slider-item-image img {
   background-color: var(--basic-light-gray);
-}
+} */
 
 .slider-item-title {
   font-family: var(--gilroy-font-family);
@@ -534,10 +534,6 @@ a {
 .add-to-compare-link:focus {
   opacity: 0.2;
 }
-
-/* Не совсем уверен, что это необходимо в данном задании,
-но на будущее пробую сделать временный эффект появления кнопок
-при наведении на товар каталога. */
 
 .catalog-item {
   position: relative;;
