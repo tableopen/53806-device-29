@@ -41,6 +41,7 @@
 
   --basic-dark-gray-for-pagination: #D9D9D9;
   --basic-gray-for-pagination: #EBEBEB;
+  --basic-gray-for-filter: #DCDCDC;
 
   --basic-white: #FFFFFF;
 
@@ -101,6 +102,7 @@ a {
 
 .main-header {
   width: 1160px;
+  min-height: 186px;
   margin: 0 auto;
   margin-top: 40px;
   padding-top: 44px;
@@ -177,8 +179,12 @@ a {
   column-gap: 38px;
 }
 
-.site-navigation li:nth-child(3) {
+.site-navigation li:last-child {
   justify-self: end;
+}
+
+.catalog-navigation {
+  display: none;
 }
 
 .catalog-navigation a {
@@ -195,7 +201,7 @@ a {
 .slider {
   width: 1160px;
   margin: 0 auto;
-  margin-bottom: 292px;
+  margin-bottom: 94px;
 }
 
 .slider-list {
@@ -210,19 +216,24 @@ a {
   column-gap: 40px;
 }
 
-.slider-item:nth-child(1) .slider-item-image {
+.slider-item-monopod .slider-item-image {
   margin-top: 17px;
   margin-left: 89px;
 }
 
-.slider-item:nth-child(2) .slider-item-image {
+.slider-item-fitness-bracelet .slider-item-image {
   margin-top: 43px;
   margin-left: 116px;
 }
 
-.slider-item:nth-child(3) .slider-item-image {
+.slider-item-quadrocopter .slider-item-image {
   margin-top: 99px;
   margin-left: 30px;
+}
+
+.slider-item-fitness-bracelet,
+.slider-item-quadrocopter {
+  display: none;
 }
 
 .slider-item-container {
@@ -325,78 +336,80 @@ a {
   column-gap: 40px;
 }
 
-.catalog-sections-item a {
+.catalog-sections-item {
   font-family: var(--gilroy-font-family);
   font-size: 18px;
   line-height: 22px;
   font-weight: 800;
   letter-spacing: 0.05em;
   color: var(--basic-black);
-  position: relative;
+  display: grid;
+  grid-template-rows: 160px min-content;
+  row-gap: 38px;
 }
 
-.catalog-sections-item:nth-child(4) a {
+.catalog-sections-item-fitness-bracelet {
   letter-spacing: normal;
 }
 
-.catalog-sections-item a::before {
-  content: "";
-  position: absolute;
-  top: -198px;
+.catalog-sections-item-icon {
   width: 160px;
   height: 160px;
   background-color: var(--basic-yellow);
+  position: relative;
 }
 
-.catalog-sections-item a::after {
+.catalog-sections-item-title {
+  padding: 0;
+  margin: 0;
+}
+
+.catalog-sections-item .catalog-sections-item-icon::before {
   content: "";
   position: absolute;
-  top: -198px;
-  left: 0;
   width: 160px;
   height: 160px;
   background-image: url("../img/vr-icon.svg");
   background-position: center;
   background-repeat: no-repeat;
-  z-index: 1;
 }
 
-.catalog-sections-item:nth-child(2) a::after {
+.catalog-sections-item-monopod .catalog-sections-item-icon::before {
   background-image: url("../img/monopod-icon.svg");
 }
 
-.catalog-sections-item:nth-child(3) a::after {
+.catalog-sections-item-action-camera .catalog-sections-item-icon::before {
   background-image: url("../img/action-camera-icon.svg");
 }
 
-.catalog-sections-item:nth-child(4) a::after {
+.catalog-sections-item-fitness-bracelet .catalog-sections-item-icon::before {
   background-image: url("../img/fitness-bracelet-icon.svg");
 }
 
-.catalog-sections-item:nth-child(5) a::after {
+.catalog-sections-item-smart-watch .catalog-sections-item-icon::before {
   background-image: url("../img/smart-watch-icon.svg");
 }
 
-.catalog-sections-item:nth-child(6) a::after {
+.catalog-sections-item-quadrocopter .catalog-sections-item-icon::before {
   background-image: url("../img/quadrocopter-icon.svg");
 }
 
-.catalog-sections-item a:focus {
+.catalog-sections-item:focus {
   color: var(--basic-black-transparent-30);
 }
 
-.catalog-sections-item a:hover::before,
-.catalog-sections-item a:focus::before {
+.catalog-sections-item:hover .catalog-sections-item-icon {
   background-color: var(--basic-dark-yellow);
 }
 
-.catalog-sections-item a:focus::after {
+.catalog-sections-item:focus .catalog-sections-item-icon::before {
   opacity: 0.3;
 }
 
 /* Features */
 
 .features {
+  min-height: 388px;
   background-image: linear-gradient(to bottom,
     transparent,
     transparent 100px,
@@ -430,12 +443,8 @@ a {
  width: 160px;
 }
 
-.features-buttons-list li:nth-child(1) {
-  padding-bottom: 21px;
-}
-
-.features-buttons-list li:nth-child(2) {
-  padding-bottom: 22px;
+.features-buttons-list li {
+  padding-bottom: 20px;
 }
 
 .feature-button:focus {
@@ -480,6 +489,7 @@ a {
 
 .feature-item {
   position: relative;
+  z-index: 1;
 }
 
 .feature-item::before {
@@ -492,14 +502,20 @@ a {
   background-image: url("../img/delivery-icon.svg");
   background-position: top right;
   background-repeat: no-repeat;
+  z-index: -1;
 }
 
-.feature-item:nth-child(2)::before {
+.feature-item-warranty::before {
   background-image: url("../img/warranty-icon.svg");
 }
 
-.feature-item:nth-child(3)::before {
+.feature-item-credit::before {
   background-image: url("../img/credit-icon.svg");
+}
+
+.feature-item-warranty,
+.feature-item-credit {
+  display: none;
 }
 
 /* Companies logos */
