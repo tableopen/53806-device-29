@@ -19,18 +19,15 @@
             fill="black" />
         </svg>
       </a>
-      <div class="user-navigation-container">
-        <!-- Здесь будет форма поиска -->
-        <a>Поиск по сайту</a>
-        <ul class="user-navigation">
-          <li><a class="login-link" href="">Войти</a></li>
-          <li><a class="compare-link" href="">Сравнить</a></li>
-          <li><a class="cart-link" href="">Корзина</a></li>
-        </ul>
-      </div>
+      <ul class="user-navigation">
+        <li class="search-link"><a href="">Поиск по сайту</a></li>
+        <li class="login-link"><a href="">Войти</a></li>
+        <li class="compare-link"><a href="">Сравнить</a></li>
+        <li class="cart-link"><a href="">Корзина</a></li>
+      </ul>
       <nav class="main-navigation">
-        <ul>
-          <li>
+        <ul class="site-navigation">
+          <li class="catalog-link">
             <a href="">каталог товаров</a>
             <ul class="catalog-navigation">
               <li><a href="">Виртуальная реальность</a></li>
@@ -41,11 +38,9 @@
               <li><a href="">Квадрокоптер</a></li>
             </ul>
           </li>
-        </ul>
-        <ul class="site-navigation">
-          <li><a href="">доставка</a></li>
-          <li><a href="">гарантия</a></li>
-          <li><a href="">контакты</a></li>
+          <li class="delivery-link"><a href="">доставка</a></li>
+          <li class="warranty-link"><a href="">гарантия</a></li>
+          <li class="contacts-link"><a href="">контакты</a></li>
         </ul>
       </nav>
     </div>
@@ -67,18 +62,14 @@
               (Восемь, Карл!) метров длиной и весом всего 5 килограмм.
             </p>
             <a class="button" href="">подробнее</a>
-            <table class="slider-item-specs">
-              <tr>
-                <td>Длина палки</td>
-                <td>Вес палки</td>
-                <td>Материал</td>
-              </tr>
-              <tr>
-                <td>8,5 м</td>
-                <td>5 кг</td>
-                <td>Карбон</td>
-              </tr>
-            </table>
+            <dl class="slider-item-specs">
+              <dt>Длина палки</dt>
+              <dd>8,5 м</dd>
+              <dt>Вес палки</dt>
+              <dd>5 кг</dd>
+              <dt>Материал</dt>
+              <dd>Карбон</dd>
+            </dl>
           </div>
         </li>
         <li class="slider-item slider-item-fitness-bracelet">
@@ -90,14 +81,11 @@
               занятия и соблюдать диету.
             </p>
             <a class="button" href="">подробнее</a>
-            <table class="slider-item-specs">
-              <tr>
-                <td>Без подзарядки</td>
+            <dl class="slider-item-specs">
+              <dt>Без подзарядки</dt>
+              <dd>48 часов</dd>
               </tr>
-              <tr>
-                <td>48 часов</td>
-              </tr>
-            </table>
+            </dl>
           </div>
         </li>
         <li class="slider-item slider-item-quadrocopter">
@@ -109,16 +97,12 @@
               замаскированным под стандартную камеру.
             </p>
             <a class="button" href="">подробнее</a>
-            <table class="slider-item-specs">
-              <tr>
-                <td>Дальность полета</td>
-                <td>Радиус поражения</td>
-              </tr>
-              <tr>
-                <td>800 м</td>
-                <td>50 м</td>
-              </tr>
-            </table>
+            <dl class="slider-item-specs">
+              <dt>Дальность полета</dt>
+              <dd>800 м</dd>
+              <dt>Радиус поражения</dt>
+              <dd>50 м</dd>
+            </dl>
           </div>
         </li>
       </ul>
@@ -265,9 +249,9 @@
           </svg>
         </a>
         <ul class="footer-user-navigation">
-          <li><a class="login-link" href="">Войти</a></li>
-          <li><a class="compare-link" href="">Сравнить</a></li>
-          <li><a class="cart-link" href="">Корзина</a></li>
+          <li class="login-link"><a href="">Войти</a></li>
+          <li class="compare-link"><a href="">Сравнить</a></li>
+          <li class="cart-link"><a href="">Корзина</a></li>
         </ul>
       </section>
 
@@ -284,7 +268,7 @@
 
       <section class="footer-social">
         <h2 class="visually-hidden">Социальные сети</h2>
-        <ul>
+        <ul class="social-buttons-list">
           <li><a class="social-button" href="">Фейсбук</a></li>
           <li><a class="social-button" href="">Инстаграм</a></li>
           <li><a class="social-button" href="">Твиттер</a></li>
