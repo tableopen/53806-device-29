@@ -19,21 +19,16 @@
             fill="black" />
         </svg>
       </a>
-      <div class="user-navigation-container">
-        <!-- Здесь будет форма поиска -->
-        <a>Поиск по сайту</a>
-        <ul class="user-navigation">
-          <ul>
-            <li><a class="profile-link" href="">Валентин Петухов</a></li>
-            <li><a class="logout-link" href="">Выйти</a></li>
-          </ul>
-          <li><a class="compare-link" href="">Сравнить</a></li>
-          <li><a class="cart-link" href="">Корзина</a></li>
-        </ul>
-      </div>
+      <ul class="user-navigation">
+        <li class="search-link"><a href="">Поиск по сайту</a></li>
+        <li class="profile-link"><a href="">Валентин Петухов</a></li>
+        <li class="logout-link"><a href="">Выйти</a></li>
+        <li class="compare-link"><a href="">Сравнить</a></li>
+        <li class="cart-link"><a href="">Корзина</a></li>
+      </ul>
       <nav class="main-navigation">
-        <ul>
-          <li>
+        <ul class="site-navigation">
+          <li class="catalog-link">
             <a href="">каталог товаров</a>
             <ul class="catalog-navigation">
               <li><a href="">Виртуальная реальность</a></li>
@@ -44,11 +39,9 @@
               <li><a href="">Квадрокоптер</a></li>
             </ul>
           </li>
-        </ul>
-        <ul class="site-navigation">
-          <li><a href="">доставка</a></li>
-          <li><a href="">гарантия</a></li>
-          <li><a href="">контакты</a></li>
+          <li class="delivery-link"><a href="">доставка</a></li>
+          <li class="warranty-link"><a href="">гарантия</a></li>
+          <li class="contacts-link"><a href="">контакты</a></li>
         </ul>
       </nav>
     </div>
@@ -83,7 +76,7 @@
             <li><a href="">По типу</a></li>
             <li><a href="">По популярности</a></li>
           </ul>
-          <ul class="sort-buttons">
+          <ul class="sort-buttons-list">
             <li><a class="sort-button" href="">В обратном порядке</a></li>
             <li><a class="sort-button sort-current">По порядку</a></li>
           </ul>
@@ -156,12 +149,10 @@
           </svg>
         </a>
         <ul class="footer-user-navigation">
-          <ul>
-            <li><a class="profile-link" href="">Валентин Петухов</a></li>
-            <li><a class="logout-link" href="">Выйти</a></li>
-          </ul>
-          <li><a class="compare-link" href="">Сравнить</a></li>
-          <li><a class="cart-link" href="">Корзина</a></li>
+          <li class="profile-link"><a href="">Валентин Петухов</a></li>
+          <li class="logout-link"><a href="">Выйти</a></li>
+          <li class="compare-link"><a href="">Сравнить</a></li>
+          <li class="cart-link"><a href="">Корзина</a></li>
         </ul>
       </section>
 
@@ -178,7 +169,7 @@
 
       <section class="footer-social">
         <h2 class="visually-hidden">Социальные сети</h2>
-        <ul>
+        <ul class="social-buttons-list">
           <li><a class="social-button" href="">Фейсбук</a></li>
           <li><a class="social-button" href="">Инстаграм</a></li>
           <li><a class="social-button" href="">Твиттер</a></li>
