@@ -745,8 +745,6 @@ a {
   justify-self: end;
 }
 
-/* Footer features */
-
 .footer-features-list {
   list-style: none;
   padding: 0;
@@ -824,16 +822,11 @@ a {
 
 /* Inner page */
 
-.user-navigation ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  grid-template-columns: max-content min-content;
-  column-gap: 20px;
+.user-navigation .profile-link {
+  margin-right: 20px;
 }
 
-.logout-link {
+.user-navigation .logout-link {
   opacity: 0.3;
 }
 
@@ -841,6 +834,7 @@ a {
   display: grid;
   grid-template-columns: 1fr 328px 832px 1fr;
   grid-template-rows: repeat(3, min-content) 1fr;
+  padding-top: 44px;
 }
 
 .inner-page-title {
@@ -851,7 +845,8 @@ a {
   color: var(--basic-black);
   width: 1160px;
   padding-left: 60px;
-  margin: 44px auto 30px;
+  margin: auto;
+  margin-bottom: 30px;
   grid-column: 2 / -2;
 }
 
@@ -864,6 +859,15 @@ a {
   margin: auto;
   margin-bottom: 50px;
   grid-column: 2 / -2;
+  display: flex;
+}
+
+.breadcrumbs li {
+  margin-right: 40px;
+}
+
+.breadcrumbs li:last-child {
+  margin-right: 0;
 }
 
 .breadcrumbs a {
@@ -941,8 +945,7 @@ a {
   height: 70px;
   padding-left: 72px;
   grid-column: 1 / 2;
-  display: grid;
-  grid-template-columns: max-content 1fr max-content;
+  display: flex;
 }
 
 .sort-title {
@@ -959,30 +962,51 @@ a {
 }
 
 .sort-list,
-.sort-buttons {
+.sort-buttons-list {
   list-style: none;
   padding: 0;
   margin: 0;
   height: 70px;
+  display: flex;
+}
+
+.sort-list li {
+  margin-right: 30px;
+}
+
+.sort-list li:last-child {
+  margin-right: 0;
+}
+
+.sort-buttons-list {
+  margin-left: auto;
+}
+
+.sort-buttons-list li {
+  margin-right: 23px;
+}
+
+.sort-buttons-list li:last-child {
+  margin-right: 0;
 }
 
 .sort-list a,
-.sort-buttons a {
+.sort-buttons-list a {
   font-family: var(--opensans-font-family);
   font-size: 14px;
-  line-height: 19px;
+  line-height: 70px;
   font-weight: normal;
   color: var(--basic-black);
   opacity: 0.3;
 }
 
 .sort-list a:hover,
-.sort-buttons a:hover {
+.sort-buttons-list a:hover {
   opacity: 0.6;
 }
 
 .sort-list a:focus,
-.sort-buttons a:focus {
+.sort-buttons-list a:focus {
   opacity: 1;
 }
 
@@ -995,37 +1019,37 @@ a {
 }
 
 .sort-list .sort-current,
-.sort-buttons .sort-current {
+.sort-buttons-list .sort-current {
   opacity: 1;
 }
 
 .catalog-list {
   list-style: none;
   margin: 0;
+  margin-bottom: -8px;
   padding-top: 69px;
   padding-left: 72px;
-  margin-bottom: 40px;
   grid-column: 1 / 2;
   grid-row: 2 / 3;
-  display: grid;
-  grid-template-columns: repeat(2, 360px);
-  grid-template-rows: repeat(2, min-content);
-  column-gap: 40px;
-  row-gap: 48px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .catalog-item {
   position: relative;
-  display: grid;
-  grid-template-columns: 276px max-content;
-  column-gap: 5px;
+  width: 360px;
+  margin-bottom: 48px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
 }
 
 .catalog-item-image {
   width: 360px;
   height: 380px;
   margin-bottom: 30px;
-  grid-column: 1 / -1;
   background-color: var(--basic-light-gray);
 }
 
@@ -1036,6 +1060,7 @@ a {
   font-weight: 800;
   letter-spacing: 0.05em;
   color: var(--basic-black);
+  width: 275px;
   padding: 0;
   margin: 0;
 }
@@ -1088,21 +1113,30 @@ a {
 }
 
 .catalog-item:hover .catalog-item-buttons {
-  display: grid;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Pagination */
 
 .pagination-list {
   list-style: none;
+  width: 760px;
   height: 70px;
   padding: 0;
   margin: 0 0 78px 72px;
   background-color: var(--basic-gray-for-pagination);
   grid-column: 1 / 2;
   grid-row: 3 / -1;
-  display: grid;
-  grid-template-columns: 1fr repeat(3, min-content) 1fr;
+  display: flex;
+}
+
+.pagination-item {
+  margin-right: 30px;
+}
+
+.pagination-item:nth-last-child(2) {
+  margin-right: 0;
 }
 
 .pagination-item a {
@@ -1114,7 +1148,6 @@ a {
   color: var(--basic-black);
   text-transform: uppercase;
   opacity: 0.3;
-  margin-right: 30px;
 }
 
 .pagination-item a:hover {
@@ -1126,14 +1159,18 @@ a {
   opacity: 1;
 }
 
+.pagination-back {
+  margin-right: auto;
+}
+
 .pagination-forward {
-  justify-self: end;
+  margin-left: auto;
 }
 
 .pagination-back a,
 .pagination-forward a {
   display: block;
-  width: 120px;
+  min-width: 120px;
   height: 70px;
   font-family: var(--gilroy-font-family);
   font-size: 16px;
