@@ -400,8 +400,8 @@ a {
 .catalog-navigation {
   width: 540px;
   display: grid;
-  column-gap: 60px;
-  row-gap: 20px;
+  column-gap: 50px;
+  row-gap: 16px;
   grid-template-areas:
   "vr fb qc"
   "mp sw ."
