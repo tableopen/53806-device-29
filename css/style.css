@@ -1450,7 +1450,7 @@ a {
 .inner-container {
   display: grid;
   grid-template-columns: 1fr 328px 832px 1fr;
-  grid-template-rows: repeat(3, min-content) 1fr;
+  grid-template-rows: repeat(2, min-content) 1fr;
   padding-top: 44px;
 }
 
@@ -1490,18 +1490,11 @@ a {
   position: absolute;
   width: 12px;
   height: 12px;
-  top: 5px;
+  top: 3px;
+  right: -26px;
   background-image: url(../img/arrow-icon.svg);
   background-position: center;
   background-repeat: no-repeat;
-}
-
-.breadcrumb-index::after {
-  right: -24px;
-}
-
-.breadcrumb-catalog::after {
-  right: -28px;
 }
 
 .breadcrumbs li,
@@ -1510,8 +1503,7 @@ a {
   font-size: 14px;
   line-height: 19px;
   font-weight: 300;
-  color: var(--basic-black);
-  opacity: 0.3;
+  color: var(--basic-black-transparent-30);
 }
 
 .breadcrumbs a:hover {
@@ -1534,15 +1526,17 @@ a {
 
 .filter-title-container {
   background-color: var(--basic-gray-for-filter);
+  min-height: 70px;
   grid-column: 1 / -1;
   display: grid;
   grid-template-columns: 1fr 328px;
+  align-items: center;
 }
 
 .filter-title {
   font-family: var(--gilroy-font-family);
   font-size: 16px;
-  line-height: 70px;
+  line-height: 20px;
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1617,12 +1611,17 @@ a {
   border-radius: 50%;
   background-color: var(--basic-gray-for-toggle);
   box-shadow: 0px 2px 2px var(--basic-black-transparent-18);
-  margin-bottom: 5px;
+  margin-bottom: 8px;
   cursor: pointer;
 }
 
 .min-price,
 .max-price {
+  font-family: var(--gilroy-font-family);
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 300;
+  color: var(--basic-black);
   padding: 0;
   margin: 0;
 }
@@ -1653,7 +1652,7 @@ a {
 }
 
 .filter-option label {
-  width: max-content;
+  width: 160px;
   position: relative;
   display: block;
   cursor: pointer;
@@ -1747,16 +1746,17 @@ a {
 }
 
 .sort-menu {
-  height: 70px;
+  min-height: 70px;
   padding-left: 72px;
   grid-column: 1 / 2;
   display: flex;
+  align-items: center;
 }
 
 .sort-title {
   font-family: var(--gilroy-font-family);
   font-size: 16px;
-  line-height: 70px;
+  line-height: 20px;
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1771,8 +1771,10 @@ a {
   list-style: none;
   padding: 0;
   margin: 0;
-  height: 70px;
+  min-height: 70px;
   display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .sort-list li:not(:last-child) {
@@ -1790,7 +1792,7 @@ a {
 .sort-list a {
   font-family: var(--opensans-font-family);
   font-size: 14px;
-  line-height: 70px;
+  line-height: 19px;
   font-weight: normal;
   color: var(--basic-black);
   opacity: 0.3;
@@ -1815,7 +1817,7 @@ a {
   position: absolute;
   width: 18px;
   height: 18px;
-  top: 41px;
+  top: 6px;
   right: 0;
   background-image: url(../img/sort-arrow-icon.svg);
   background-position: center;
@@ -1920,7 +1922,7 @@ a {
 }
 
 .add-to-cart-link::before {
-  background-color: var(--basic-yellow);
+  background-color: var(--basic-dark-yellow);
 }
 
 .add-to-cart-link {
@@ -1961,13 +1963,14 @@ a {
 .pagination-list {
   list-style: none;
   width: 760px;
-  height: 70px;
+  min-height: 70px;
   padding: 0;
   margin: 0 0 79px 72px;
   background-color: var(--basic-gray-for-pagination);
   grid-column: 1 / 2;
   grid-row: 3 / -1;
   display: flex;
+  align-items: center;
 }
 
 .pagination-item {
@@ -1981,7 +1984,7 @@ a {
 .pagination-item a {
   font-family: var(--gilroy-font-family);
   font-size: 16px;
-  line-height: 70px;
+  line-height: 20px;
   font-weight: 800;
   letter-spacing: 0.1em;
   color: var(--basic-black);
@@ -2009,20 +2012,16 @@ a {
 .pagination-back a,
 .pagination-forward a {
   display: block;
-  min-width: 120px;
-  height: 70px;
+  width: 120px;
   font-family: var(--gilroy-font-family);
   font-size: 16px;
-  line-height: 70px;
+  line-height: 20px;
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   text-align: center;
   color: var(--basic-black);
-}
-
-.pagination-forward a {
-  padding-right: 5px;
+  padding: 25px 10px;
 }
 
 .pagination-back a:hover,
