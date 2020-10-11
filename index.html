@@ -21,7 +21,7 @@
       </a>
       <ul class="navigation user-navigation">
         <li class="search-item">
-          <form class="search-form" action="https://echo.htmlacademy.ru/" method="GET" target="_blank">
+          <form class="search-form" action="https://echo.htmlacademy.ru/" method="GET">
             <label for="search-input"></label>
             <input class="search-form-input" id="search-input" type="search" name="search" placeholder="Поиск по сайту">
             <button class="search-form-button" type="submit">Найти</button>
@@ -73,21 +73,21 @@
       </ul>
       <nav class="navigation main-navigation">
         <ul class="navigation site-navigation">
-          <li class="catalog-link"><a href="">каталог товаров</a></li>
+          <li class="catalog-link">
+            <a href="">каталог товаров</a>
+            <ul class="navigation catalog-navigation catalog-navigation-current">
+              <li class="virtual-reality-link"><a href="">Виртуальная реальность</a></li>
+              <li class="monopod-link"><a href="catalog.html">Моноподы для селфи</a></li>
+              <li class="action-camera-link"><a href="">Экшн-камеры</a></li>
+              <li class="fintess-bracelet-link"><a href="">Фитнес-браслеты</a></li>
+              <li class="smart-watch-link"><a href="">Умные часы</a></li>
+              <li class="quadrocopter-link"><a href="">Квадрокоптер</a></li>
+            </ul>
+          </li>
           <li class="delivery-link"><a href="">доставка</a></li>
           <li class="warranty-link"><a href="">гарантия</a></li>
           <li class="contacts-link"><a href="">контакты</a></li>
         </ul>
-        <div class="catalog-navigation-container">
-          <ul class="navigation catalog-navigation">
-            <li class="virtual-reality-link"><a href="">Виртуальная реальность</a></li>
-            <li class="monopod-link"><a href="catalog.html">Моноподы для селфи</a></li>
-            <li class="action-camera-link"><a href="">Экшн-камеры</a></li>
-            <li class="fintess-bracelet-link"><a href="">Фитнес-браслеты</a></li>
-            <li class="smart-watch-link"><a href="">Умные часы</a></li>
-            <li class="quadrocopter-link"><a href="">Квадрокоптер</a></li>
-          </ul>
-        </div>
       </nav>
     </div>
   </header>
@@ -99,7 +99,7 @@
     <section class="slider">
       <h2 class="visually-hidden">Слайдер товаров</h2>
       <ul class="slider-list">
-        <li class="slider-item slider-item-monopod slider-item-current">
+        <li class="slider-item slider-item-monopod item-current">
           <img class="slider-item-image" src="img/slider-image-1.png" width="384" height="486" alt="Три палки для селфи">
           <div class="slider-item-container">
             <p class="slider-item-title">
@@ -109,14 +109,7 @@
               Самая длинная палка для селфи доступна в нашем магазине. <br> Восемь
               (Восемь, Карл!) метров длиной и весом всего 5 килограмм.
             </p>
-            <div class="slider-buttons-container">
-              <a class="button" href="">подробнее</a>
-              <div class="slider-buttons-inner-container">
-                <button class="slider-button slider-button-current" type="button" aria-label="Первый слайд"></button>
-                <button class="slider-button" type="button" aria-label="Второй слайд"></button>
-                <button class="slider-button" type="button" aria-label="Третий слайд"></button>
-              </div>
-            </div>
+            <a class="button" href="">подробнее</a>
             <dl class="slider-item-specs">
               <dt>Длина палки</dt>
               <dd>8,5 м</dd>
@@ -137,14 +130,7 @@
               Мотивирующие фитнес-браслеты помогут найти в себе силы <br> не пропускать
               занятия и соблюдать диету.
             </p>
-            <div class="slider-buttons-container">
-              <a class="button" href="">подробнее</a>
-              <div class="slider-buttons-inner-container">
-                <button class="slider-button" type="button" aria-label="Первый слайд"></button>
-                <button class="slider-button slider-button-current" type="button" aria-label="Второй слайд"></button>
-                <button class="slider-button" type="button" aria-label="Третий слайд"></button>
-              </div>
-            </div>
+            <a class="button" href="">подробнее</a>
             <dl class="slider-item-specs">
               <dt>Без подзарядки</dt>
               <dd>48 часов</dd>
@@ -161,14 +147,7 @@
               Этот обычный, на первый взгляд, квадрокоптер оснащен <br> мощным лазером,
               замаскированным под стандартную камеру.
             </p>
-            <div class="slider-buttons-container">
-              <a class="button" href="">подробнее</a>
-              <div class="slider-buttons-inner-container">
-                <button class="slider-button" type="button" aria-label="Первый слайд"></button>
-                <button class="slider-button" type="button" aria-label="Второй слайд"></button>
-                <button class="slider-button slider-button-current " type="button" aria-label="Третий слайд"></button>
-              </div>
-            </div>
+            <a class="button" href="">подробнее</a>
             <dl class="slider-item-specs">
               <dt>Дальность полета</dt>
               <dd>800 м</dd>
@@ -177,6 +156,11 @@
             </dl>
           </div>
         </li>
+        <div class="slider-buttons-container">
+          <button class="slider-button button-current" type="button" aria-label="Первый слайд"></button>
+          <button class="slider-button" type="button" aria-label="Второй слайд"></button>
+          <button class="slider-button" type="button" aria-label="Третий слайд"></button>
+        </div>
       </ul>
     </section>
 
@@ -226,12 +210,12 @@
       <div class="feature-container">
         <h2 class="visually-hidden">Преимущества</h2>
         <ul class="features-buttons-list">
-          <li><button type="button" class="button feature-button feature-button-current" href="">доставка</button></li>
+          <li><button type="button" class="button feature-button button-current" href="">доставка</button></li>
           <li><button type="button" class="button feature-button" href="">гарантия</button></li>
           <li><button type="button" class="button feature-button" href="">кредит</button></li>
         </ul>
         <ul class="features-list">
-          <li class="feature-item feature-item-delivery feature-item-current">
+          <li class="feature-item feature-item-delivery item-current">
             <h3 class="feature-title">Доставка</h3>
             <p class="feature-description">
               Мы с удовольствием доставим ваш товар прямо к вашему <br> подъезду совершенно
@@ -303,11 +287,11 @@
         <p>Вы можете забрать товар сами, заехав в наш офис. Заодно, вы сможете <br> проверить работоспособность покупки.
           Всякое бывает.
         </p>
-        <a class="map-link" href="https://goo.gl/maps/6zqFhwLGWE38AUVw7">
+        <a class="map-button" href="https://goo.gl/maps/6zqFhwLGWE38AUVw7" target="_blank">
           <img src="img/map-image.png" width="560" height="222"
             alt="Офис компании по адресу г. Москва, ул. Строителей, 15">
         </a>
-        <a class="button" href="">напишите нам</a>
+        <a class="button write-us-button" href="">напишите нам</a>
       </section>
     </div>
 
@@ -385,9 +369,9 @@
       <section class="footer-social">
         <h2 class="visually-hidden">Социальные сети</h2>
         <ul class="social-buttons-list">
-          <li><a class="social-button social-button-facebook" href="" aria-label="Фейсбук"></a></li>
-          <li><a class="social-button social-button-instagram" href="" aria-label="Инстаграм"></a></li>
-          <li><a class="social-button social-button-twitter" href="" aria-label="Твиттер"></a></li>
+          <li><a class="social-button social-button-facebook" href="" target="_blank" aria-label="Фейсбук"></a></li>
+          <li><a class="social-button social-button-instagram" href="" target="_blank" aria-label="Инстаграм"></a></li>
+          <li><a class="social-button social-button-twitter" href="" target="_blank" aria-label="Твиттер"></a></li>
         </ul>
         <a class="footer-copyright" href="https://htmlacademy.ru/intensive/htmlcss" target="_blank">
           <img src="img/htlm-academy-logo.svg" width="27" height="34" alt="Логотип HTML Academy">
@@ -423,7 +407,7 @@
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2249.1125488779976!2d37.52742931592807!3d55.687030980535816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54cf65f5c8955%3A0x694710ccd55501e!2z0YPQuy4g0KHRgtGA0L7QuNGC0LXQu9C10LksIDE1LCDQnNC-0YHQutCy0LAsINCg0L7RgdGB0LjRjywgMTE5MzEx!5e0!3m2!1sru!2sby!4v1601916702552!5m2!1sru!2sby"
       width="961" height="559" allowfullscreen tabindex="0"
       title="Офис компании по адресу г. Москва, ул. Строителей, 15"></iframe>
-    <button class=" modal-close" type="button" aria-label="Закрыть"></button>
+    <button class="modal-close" type="button" aria-label="Закрыть"></button>
   </section>
 
 </body>

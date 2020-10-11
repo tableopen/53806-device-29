@@ -338,20 +338,27 @@ a {
   flex-wrap: wrap;
 }
 
-.site-navigation li {
+.site-navigation > li {
+  margin-right: 40px;
+  padding-bottom: 5px;
+}
+
+.site-navigation .catalog-link {
+  width: 255px;
+  margin-right: 285px;
+}
+
+.site-navigation .catalog-link:hover {
+  width: 500px;
   margin-right: 40px;
 }
 
-.catalog-link {
-  width: 500px;
-}
-
-.catalog-link a {
+.catalog-link > a {
   position: relative;
   padding-right: 35px;
 }
 
-.catalog-link a::after {
+.catalog-link > a::after {
   content: "";
   position: absolute;
   top: 0;
@@ -372,14 +379,15 @@ a {
   margin-right: -0.2em;
 }
 
-.catalog-navigation-container {
+.catalog-navigation {
   width: 1160px;
-  min-height: 146px;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  min-height: 160px;
+  margin: 0;
+  padding-top: 26px;
+  padding-bottom: 26px;
   background-color: var(--basic-yellow);
   position: absolute;
-  top: 194px;
+  top: 180px;
   margin-left: -60px;
   padding-left: 60px;
   padding-right: 60px;
@@ -387,19 +395,17 @@ a {
   z-index: 100;
 }
 
-.catalog-navigation-container-current {
-  display: block;
-}
-
-.catalog-navigation {
-  width: 540px;
+.catalog-link:hover .catalog-navigation,
+.catalog-link:focus-within .catalog-navigation {
   display: grid;
-  column-gap: 50px;
-  row-gap: 16px;
+  grid-template-columns: repeat(3, max-content);
+  grid-template-rows: repeat(3, min-content);
   grid-template-areas:
   "vr fb qc"
   "mp sw ."
   "ac . .";
+  row-gap: 16px;
+  column-gap: 64px;
 }
 
 .virtual-reality-link {
@@ -424,6 +430,7 @@ a {
 
 .quadrocopter-link {
   grid-area: qc;
+  margin-left: -1px;
 }
 
 .catalog-navigation a {
@@ -450,16 +457,18 @@ a {
 }
 
 .slider-list {
+  min-height: 528px;
   list-style: none;
   margin: 0;
   padding: 0;
+  position: relative;
 }
 
 .slider-item {
   display: none;
 }
 
-.slider-item-current {
+.slider-item.item-current {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 40px;
@@ -545,17 +554,16 @@ a {
   margin-bottom: 51px;
 }
 
-.slider-buttons-container {
+.slider-list .button {
   margin-bottom: 51px;
-  display: flex;
-  align-items: center;
 }
 
-.slider-buttons-inner-container {
-  min-width: 72px;
+.slider-buttons-container {
+  width: 72px;
   height: 12px;
-  margin-left: auto;
-  margin-right: 88px;
+  position: absolute;
+  right: 88px;
+  bottom: 159px;
   display: flex;
   justify-content: space-between;
 }
@@ -571,12 +579,7 @@ a {
   margin: 0;
 }
 
-.slider-button:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px var(--basic-black);
-}
-
-.slider-button-current::after {
+.slider-button.button-current::after {
   content: "";
   position: absolute;
   width: 6px;
@@ -813,12 +816,12 @@ a {
 }
 
 .feature-button:active,
-.feature-button-current {
+.feature-button.button-current {
   color: var(--basic-yellow);
 }
 
 .feature-button:active::before,
-.feature-button-current::before {
+.feature-button.button-current::before {
   width: 284px;
   height: 100%;
   background-color: var(--basic-black);
@@ -863,7 +866,7 @@ a {
   z-index: 1;
 }
 
-.feature-item-current {
+.feature-item.item-current {
   display: block;
 }
 
