@@ -450,6 +450,7 @@ a {
     var(--basic-yellow) 146px,
     transparent 146px,
     transparent);
+  position: relative;
 }
 
 .slider-list {
@@ -457,7 +458,6 @@ a {
   list-style: none;
   margin: 0;
   padding: 0;
-  position: relative;
 }
 
 .slider-item {
@@ -468,6 +468,10 @@ a {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 40px;
+}
+
+.slider-item-image[src=""] {
+  background-color: var(--basic-light-gray);
 }
 
 .slider-item-monopod .slider-item-image {
@@ -595,7 +599,7 @@ a {
 }
 
 .slider-item-quadrocopter .slider-item-specs {
-  column-gap: 27px;
+  column-gap: 64px;
 }
 
 .slider-item-specs dt {
@@ -649,7 +653,7 @@ a {
   top: 50%;
   transform: translateY(-50%);
   width: 100%;
-  height: 8px;
+  height: 20%;
   z-index: -1;
   background-color: var(--basic-dark-yellow);
 }
@@ -916,10 +920,11 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  line-height: 0;
 }
 
 .companies-logos-list li {
+  width: 260px;
+  height: 100px;
   margin-right: 40px;
   margin-bottom: 40px;
 }
@@ -928,12 +933,21 @@ a {
   margin-right: 0;
 }
 
-.companies-logos-list img {
+.company-link {
+  display: flex;
   width: 260px;
   height: 100px;
-  background-color: var(--basic-light-gray);
+}
+
+.company-link img {
+  width: 260px;
+  height: 100px;
   filter: grayscale(100%);
   opacity: 0.2;
+}
+
+.company-link img[src=""] {
+  background-color: var(--basic-light-gray);
 }
 
 .company-link:hover img,
@@ -1028,7 +1042,16 @@ a {
   border-radius: 50%;
 }
 
+.contacts .map-button {
+  display: block;
+  width: 560px;
+  height: 222px;
+  background-color: var(--basic-light-gray);
+}
+
 .contacts img {
+  width: 560px;
+  height: 222px;
   background-color: var(--basic-light-gray);
   margin-bottom: 40px;
 }
@@ -1273,9 +1296,14 @@ a {
 }
 
 .footer-copyright {
+  display: block;
   width: 27px;
   height: 34px;
   justify-self: end;
+}
+
+.footer-copyright img[src=""] {
+  background-color: var(--basic-light-gray);
 }
 
 .footer-copyright:hover,
@@ -1778,9 +1806,11 @@ a {
 
 .filter-option.filter-radio {
   padding-left: 40px;
+  margin-bottom: 16px;
 }
 
-.filter-option:last-child {
+.filter-option.filter-checkbox:last-child,
+.filter-option.filter-radio:last-child {
   margin-bottom: 0;
 }
 
@@ -1859,8 +1889,8 @@ a {
 }
 
 .filter-button {
-  padding-right: 6px;
-  margin-top: 5px;
+  padding-right: 7px;
+  margin-top: 4px;
   width: 200px;
 }
 
@@ -1876,8 +1906,8 @@ a {
 .catalog-list {
   list-style: none;
   margin: 0;
-  margin-bottom: -9px;
-  padding-top: 69px;
+  margin-bottom: -8px;
+  padding-top: 70px;
   padding-left: 72px;
   grid-column: 1 / 2;
   grid-row: 2 / 3;
@@ -1889,12 +1919,10 @@ a {
 .catalog-item {
   position: relative;
   width: 360px;
-  margin-bottom: 49px;
+  margin-bottom: 48px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   align-content: flex-start;
-  align-items: flex-start;
 }
 
 .new-catalog-item::before {
@@ -1926,7 +1954,7 @@ a {
 }
 
 .catalog-item-name {
-  width: 275px;
+  width: 270px;
   font-family: var(--gilroy-font-family);
   font-size: 18px;
   line-height: 22px;
@@ -1934,6 +1962,7 @@ a {
   letter-spacing: 0.05em;
   padding: 0;
   margin: 0;
+  margin-right: auto;
 }
 
 .catalog-item-name a {
@@ -1953,14 +1982,10 @@ a {
 
 .catalog-item-buttons {
   position: absolute;
-  top: 171px;
+  top: 170px;
   left: 77px;
   display: none;
   text-align: center;
-}
-
-.add-to-cart-link::before {
-  background-color: var(--basic-dark-yellow);
 }
 
 .add-to-cart-link {
@@ -2016,6 +2041,7 @@ a {
   list-style: none;
   padding: 0;
   margin: 0;
+  margin-top: -1px;
   width: 440px;
   display: flex;
   flex-wrap: wrap;
@@ -2051,14 +2077,6 @@ a {
   color: var(--basic-black);
 }
 
-.pagination-button-back {
-  margin-right: auto;
-}
-
-.pagination-button-forward {
-  margin-left: auto;
-}
-
 .pagination .pagination-button {
   display: block;
   width: 120px;
@@ -2070,7 +2088,16 @@ a {
   text-transform: uppercase;
   text-align: center;
   color: var(--basic-black);
-  padding: 25px 10px;
+}
+
+.pagination .pagination-button-back {
+  margin-right: auto;
+  padding: 25px 10px 25px 10px;
+}
+
+.pagination .pagination-button-forward {
+  margin-left: auto;
+  padding: 25px 12px 25px 10px;
 }
 
 .pagination .pagination-button:hover,

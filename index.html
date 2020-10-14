@@ -156,12 +156,12 @@
             </dl>
           </div>
         </li>
-        <div class="slider-buttons-container">
-          <button class="slider-button button-current" type="button" aria-label="Первый слайд"></button>
-          <button class="slider-button" type="button" aria-label="Второй слайд"></button>
-          <button class="slider-button" type="button" aria-label="Третий слайд"></button>
-        </div>
       </ul>
+      <div class="slider-buttons-container">
+        <button class="slider-button button-current" type="button" aria-label="Первый слайд"></button>
+        <button class="slider-button" type="button" aria-label="Второй слайд"></button>
+        <button class="slider-button" type="button" aria-label="Третий слайд"></button>
+      </div>
     </section>
 
     <section class="catalog-sections">
@@ -210,9 +210,9 @@
       <div class="feature-container">
         <h2 class="visually-hidden">Преимущества</h2>
         <ul class="features-buttons-list">
-          <li><button type="button" class="button feature-button button-current" href="">доставка</button></li>
-          <li><button type="button" class="button feature-button" href="">гарантия</button></li>
-          <li><button type="button" class="button feature-button" href="">кредит</button></li>
+          <li><button type="button" class="button feature-button button-current">доставка</button></li>
+          <li><button type="button" class="button feature-button">гарантия</button></li>
+          <li><button type="button" class="button feature-button">кредит</button></li>
         </ul>
         <ul class="features-list">
           <li class="feature-item feature-item-delivery item-current">
@@ -291,7 +291,7 @@
           <img src="img/map-image.png" width="560" height="222"
             alt="Офис компании по адресу г. Москва, ул. Строителей, 15">
         </a>
-        <a class="button write-us-button" href="">напишите нам</a>
+        <a class="button write-us-button" href="writeus.html">напишите нам</a>
       </section>
     </div>
 
@@ -385,15 +385,15 @@
     <form class="write-us-form" action="https://echo.htmlacademy.ru" method="post">
       <p>
         <label for="name-input">Ваше имя:</label>
-        <input class="write-us-name" id="name-input" type="text" name="name" placeholder="Имя Фамилия">
+        <input class="write-us-input write-us-name" id="name-input" type="text" name="name" placeholder="Имя Фамилия">
       </p>
       <p>
         <label for="email-input">Ваш e-mail:</label>
-        <input class="write-us-email" id="email-input" type="email" name="email" placeholder="email@example.com">
+        <input class="write-us-input write-us-email" id="email-input" type="email" name="email" placeholder="email@example.com">
       </p>
       <p>
         <label class="textarea-input">Текст письма:</label>
-        <textarea class="write-us-textarea" id="textarea-input" name="textarea"
+        <textarea class="write-us-input write-us-textarea" id="textarea-input" name="textarea"
           placeholder="В свободной форме"></textarea>
       </p>
       <button class="button" type="submit">отправить</button>
@@ -409,6 +409,8 @@
       title="Офис компании по адресу г. Москва, ул. Строителей, 15"></iframe>
     <button class="modal-close" type="button" aria-label="Закрыть"></button>
   </section>
+
+  <script src="js/script.js"></script>
 
 </body>
 
