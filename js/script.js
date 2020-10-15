@@ -2,9 +2,11 @@
 
 const sliderItems = document.querySelectorAll('.slider-item');
 const sliderBtns = document.querySelectorAll('.slider-button');
+const sliderBtnsContainer = document.querySelector('.slider-buttons-container');
 
 const featureItems = document.querySelectorAll('.feature-item');
 const featureBtns = document.querySelectorAll('.feature-button');
+const featureBtnsContainer = document.querySelector('.features-buttons-list');
 
 const writeUsModal = document.querySelector('.modal-write-us');
 const writeUsBtn = document.querySelector('.write-us-button');
@@ -14,22 +16,21 @@ const mapBtn = document.querySelector('.map-button');
 
 let modalCloseBtn;
 
-const setListenerForItems = function (items, buttons) {
-  for (let i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener('click', function (evt) {
-      evt.preventDefault();
-      for(let j = 0; j < buttons.length; j++) {
-        buttons[j].classList.remove('button-current');
-        items[j].classList.remove('item-current');
+const setListenerForSlider = function (items, buttons, container) {
+  container.addEventListener('click', function(evt) {
+    for (let i = 0; i < buttons.length; i++) {
+      if (evt.target === buttons[i]) {
+        evt.preventDefault();
+        for(let j = 0; j < buttons.length; j++) {
+          buttons[j].classList.remove('button-current');
+          items[j].classList.remove('item-current');
+        }
+        buttons[i].classList.add('button-current');
+        items[i].classList.add('item-current');
       }
-      buttons[i].classList.add('button-current');
-      items[i].classList.add('item-current');
-    });
-  }
+    }
+  });
 };
-
-setListenerForItems(sliderItems, sliderBtns);
-setListenerForItems(featureItems, featureBtns);
 
 const setListenerForModal = function (modal, button) {
   button.addEventListener('click', function (evt) {
@@ -98,6 +99,9 @@ const setHandlerForForm = function (modal) {
     }
   });
 };
+
+setListenerForSlider(sliderItems, sliderBtns, sliderBtnsContainer);
+setListenerForSlider(featureItems, featureBtns, featureBtnsContainer);
 
 setListenerForModal(writeUsModal, writeUsBtn);
 setListenerForModal(mapModal, mapBtn);
