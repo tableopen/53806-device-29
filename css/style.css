@@ -1,31 +1,31 @@
 /* Fonts */
 
 @font-face {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 300;
-  src: local('Open Sans Light'), local('OpenSans-Light'), url('../fonts/opensanslight.woff2') format('woff2'), url('../fonts/opensanslight.woff') format('woff');
+  src: local("Open Sans Light"), local("OpenSans-Light"), url("../fonts/opensanslight.woff2") format("woff2"), url("../fonts/opensanslight.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: normal;
-  src: local('Open Sans Regular'), local('OpenSans-Regular'), url('../fonts/opensans.woff2') format('woff2'), url('../fonts/opensans.woff') format('woff');
+  src: local("Open Sans Regular"), local("OpenSans-Regular"), url("../fonts/opensans.woff2") format("woff2"), url("../fonts/opensans.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 800;
-  src: local('Gilroy ExtraBold'), local('Gilroy-ExtraBold'),url('../fonts/gilroyextrabold.woff2') format('woff2'), url('../fonts/gilroyextrabold.woff') format('woff');
+  src: local("Gilroy ExtraBold"), local("Gilroy-ExtraBold"),url("../fonts/gilroyextrabold.woff2") format("woff2"), url("../fonts/gilroyextrabold.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 300;
-  src: local('Gilroy Light'), local('Gilroy-Light'), url('../fonts/gilroylight.woff2') format('woff2'), url('../fonts/gilroylight.woff') format('woff');
+  src: local("Gilroy Light"), local("Gilroy-Light"), url("../fonts/gilroylight.woff2") format("woff2"), url("../fonts/gilroylight.woff") format("woff");
 }
 
 /* Variables */
@@ -438,37 +438,21 @@ a {
 .catalog-link:focus-within .catalog-navigation {
   display: grid;
   grid-template-columns: repeat(3, max-content);
-  grid-template-areas:
-  "vr fb qc"
-  "mp sw ."
-  "ac . .";
   row-gap: 16px;
   column-gap: 64px;
 }
 
-.virtual-reality-link {
-  grid-area: vr;
+.catalog-navigation li {
+  max-width: 180px;
+  word-break: break-all;
 }
 
-.monopod-link {
-  grid-area: mp;
-}
-
-.action-camera-link {
-  grid-area: ac;
-}
-
-.fintess-bracelet-link {
-  grid-area: fb;
-}
-
-.smart-watch-link {
-  grid-area: sw;
-}
-
-.quadrocopter-link {
-  grid-area: qc;
+.catalog-navigation li:nth-child(3) {
   margin-left: -1px;
+}
+
+.catalog-navigation li:nth-child(6) {
+  grid-row: 3 / 4;
 }
 
 .catalog-navigation a {
@@ -532,6 +516,7 @@ a {
 }
 
 .slider-item-container {
+  width: 560px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -639,6 +624,7 @@ a {
   grid-template-columns: repeat(3, max-content);
   column-gap: 62px;
   row-gap: 15px;
+  overflow: hidden;
 }
 
 .slider-item-quadrocopter .slider-item-specs {
@@ -653,6 +639,10 @@ a {
   letter-spacing: 0.1em;
   color: var(--basic-black);
   grid-row: 2 / 3;
+  max-width: 185px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .slider-item-specs dd {
@@ -664,6 +654,10 @@ a {
   color: var(--basic-black);
   margin: 0;
   grid-row: 1 / 2;
+  max-width: 185px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 /* Buttons */
@@ -687,6 +681,7 @@ a {
   padding: 9px 0 9px 0.2em;
   margin: 0;
   cursor: pointer;
+  word-break: break-all;
 }
 
 .button::before {
@@ -1160,7 +1155,7 @@ a {
   margin-right: 40px;
 }
 
-.footer-user-navigation a {
+.footer-user-navigation-link {
   font-family: var(--opensans-font-family);
   font-size: 15px;
   line-height: 20px;
@@ -1168,13 +1163,22 @@ a {
   color: var(--basic-white-transparent-70);
 }
 
-.footer-user-navigation a:hover,
-.footer-user-navigation a:focus {
+.footer-user-navigation-link:hover,
+.footer-user-navigation-link:focus {
   color: var(--basic-white);
 }
 
-.footer-user-navigation a:active {
+.footer-user-navigation-link:active {
   color: var(--basic-white-transparent-30);
+}
+
+.footer-user-navigation-link:hover .link-icon,
+.footer-user-navigation-link:focus .link-icon {
+  opacity: 0.6;
+}
+
+.footer-user-navigation-link:active .link-icon {
+  opacity: 0.3;
 }
 
 .footer-user-navigation .profile-item {
@@ -1843,12 +1847,10 @@ a {
 }
 
 .filter-option {
-  padding-left: 42px;
   margin-bottom: 15px;
 }
 
 .filter-option.filter-radio {
-  padding-left: 40px;
   margin-bottom: 16px;
 }
 
@@ -1858,17 +1860,22 @@ a {
 }
 
 .filter-option label {
-  width: 160px;
+  padding-left: 42px;
+  width: min-content;
   position: relative;
   display: block;
   cursor: pointer;
+}
+
+.filter-option.filter-radio label {
+  padding-left: 40px;
 }
 
 .filter-input-checkbox + label::before {
   content: "";
   position: absolute;
   top: 0;
-  left: -42px;
+  left: 0;
   width: 24px;
   height: 24px;
   border: 2px solid var(--basic-black);
@@ -1878,7 +1885,7 @@ a {
   content: "";
   position: absolute;
   top: 2px;
-  left: -40px;
+  left: 2px;
   width: 20px;
   height: 21px;
   background-image: url("../img/check-icon.svg");
@@ -1890,7 +1897,7 @@ a {
   content: "";
   position: absolute;
   top: 0;
-  left: -40px;
+  left: 0;
   width: 24px;
   height: 24px;
   border: 2px solid var(--basic-black);
@@ -1901,7 +1908,7 @@ a {
   content: "";
   position: absolute;
   top: 8px;
-  left: -32px;
+  left: 8px;
   width: 8px;
   height: 8px;
   background-color: var(--basic-black);

@@ -90,7 +90,7 @@ const setHandlerForForm = function (modal) {
       evt.preventDefault();
       modal.classList.remove('modal-error');
       void modal.offsetWidth;
-      modal.classList.add("modal-error");
+      modal.classList.add('modal-error');
     } else {
       if (isStorageSupport) {
         localStorage.setItem('name', nameInput.value);
